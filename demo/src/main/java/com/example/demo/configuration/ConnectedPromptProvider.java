@@ -3,6 +3,7 @@ package com.example.demo.configuration;
 import com.example.demo.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.jline.utils.AttributedString;
+import org.jline.utils.AttributedStyle;
 import org.springframework.shell.jline.PromptProvider;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,13 @@ public class ConnectedPromptProvider  implements PromptProvider{
 
     @Override
     public AttributedString getPrompt() {
-        String message = String.format("Spring CMR (%s)> ", this.personService.isConnected() ? "connected" : "disconnect");
-        return new AttributedString(message);
+
+        var logged = new AttributedString(String.format("Spring CMR (%s)> ", this.personService.getUserNameLogging()),
+                AttributedStyle.DEFAULT.foreground(AttributedStyle.GREEN));
+        var unLogged = new AttributedString("Spring CMR (disconnect)> ",
+                AttributedStyle.DEFAULT.foreground(AttributedStyle.RED));
+
+        return this.personService.isConnected()
+                ? logged : unLogged;
     }
 }

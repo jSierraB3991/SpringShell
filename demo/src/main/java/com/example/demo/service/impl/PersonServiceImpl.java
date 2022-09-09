@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,6 +18,7 @@ import java.util.stream.Stream;
 public class PersonServiceImpl implements PersonService, InitializingBean {
 
     private final AtomicBoolean connected = new AtomicBoolean();
+    private final AtomicReference<String> user = new AtomicReference<>();
     private final Map<Long, Person> people = new ConcurrentHashMap<>();
 
     public boolean isConnected() {
@@ -24,6 +26,7 @@ public class PersonServiceImpl implements PersonService, InitializingBean {
     }
 
     public void connect(String user, String password) {
+        this.user.set(user);
         this.connected.set(true);
     }
 
@@ -39,6 +42,11 @@ public class PersonServiceImpl implements PersonService, InitializingBean {
         return this.people.values().stream()
                 .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public String getUserNameLogging() {
+        return this.user.get();
     }
 
     @Override
