@@ -1,0 +1,51 @@
+Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
+Maven home: /opt/maven
+Java version: 11.0.16.1, vendor: Oracle Corporation, runtime: /usr/lib/jvm/java-11-openjdk
+Default locale: es_CO, platform encoding: UTF-8
+OS name: "linux", version: "5.19.6-artix1-1", arch: "amd64", family: "unix"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:basic-shell >-----------------------
+[INFO] Building basic-shell 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ basic-shell ---
+[INFO] Deleting /home/juan-sierra/Source/SpringShell/basic-shell/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ basic-shell ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ basic-shell ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to /home/juan-sierra/Source/SpringShell/basic-shell/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ basic-shell ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/juan-sierra/Source/SpringShell/basic-shell/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ basic-shell ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/juan-sierra/Source/SpringShell/basic-shell/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ basic-shell ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ basic-shell ---
+[INFO] Building jar: /home/juan-sierra/Source/SpringShell/basic-shell/target/basic-shell-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.3:repackage (repackage) @ basic-shell ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ basic-shell ---
+[INFO] Installing /home/juan-sierra/Source/SpringShell/basic-shell/target/basic-shell-0.0.1-SNAPSHOT.jar to /home/juan-sierra/.m2/repository/com/example/basic-shell/0.0.1-SNAPSHOT/basic-shell-0.0.1-SNAPSHOT.jar
+[INFO] Installing /home/juan-sierra/Source/SpringShell/basic-shell/pom.xml to /home/juan-sierra/.m2/repository/com/example/basic-shell/0.0.1-SNAPSHOT/basic-shell-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.331 s
+[INFO] Finished at: 2022-09-10T00:01:51-05:00
+[INFO] ------------------------------------------------------------------------
