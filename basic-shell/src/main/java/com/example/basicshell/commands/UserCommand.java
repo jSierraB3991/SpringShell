@@ -2,7 +2,7 @@ package com.example.basicshell.commands;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;s
+import java.util.Map;
 
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
