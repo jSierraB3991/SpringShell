@@ -16,19 +16,21 @@ import lombok.RequiredArgsConstructor;
 @ShellComponent
 @RequiredArgsConstructor
 public class TableExamplesCommand {
-    public String[] CONTINENTS = {"Europe", "North America", "South America", "Africa", "Asia", "Austraila and Oceania"};
-    public String[] COUNTRIES1 = {"Germany", "USA", "Brasil", "Nigeria", "China", "Australia"};
-    public String[] COUNTRIES2 = {"France", "Canada", "Argentina", "Egypt", "India", "New Zeeland"};
 
     private final ShellHelper shellHelper;
 
     @ShellMethod("Display sample tables")
     public void sampleTables() {
+        String[] CONTINENTS = {"Europe", "North America", "South America", "Africa", "Asia", "Austraila and Oceania"};
+        String[] COUNTRIES1 = {"Germany", "USA", "Brasil", "Nigeria", "China", "Australia"};
+        String[] COUNTRIES2 = {"France", "Canada", "Argentina", "Egypt", "India", "New Zeeland"};
+         
         Object[][] sampleData = new String[][] {
                 CONTINENTS,
                 COUNTRIES1,
                 COUNTRIES2
         };
+        
         var model = new ArrayTableModel(sampleData);
         var tableBuilder = new TableBuilder(model);
 
