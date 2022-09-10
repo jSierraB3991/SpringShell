@@ -1,11 +1,15 @@
 package com.example.basicshell.commands;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashMap;
+import java.util.Map;s
 
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
+import org.springframework.shell.table.BeanListTableModel;
+import org.springframework.shell.table.BorderStyle;
+import org.springframework.shell.table.TableBuilder;
 import org.springframework.util.StringUtils;
 
 import com.example.basicshell.model.CliUser;
@@ -22,6 +26,23 @@ public class UserCommand {
     private final ShellHelper helper;
     private final UserService service;
     private final InputReader inputReader;
+
+    @ShellMethod("Display list of users")
+    public void userList() {
+        var users = service.getUsers();
+
+        LinkedHashMap<String, Object> headers = new LinkedHashMap<>();
+        headers.put("id", "Id");
+        headers.put("userName", "Username");
+        headers.put("fullName", "Full name");
+        headers.put("gender", "Gender");
+        var model = new BeanListTableModel<CliUser>(users, headers);
+
+        TableBuilder tableBuilder = new TableBuilder(model);
+        tableBuilder.addInnerBorder(BorderStyle.fancy_light);
+        tableBuilder.addHeaderBorder(BorderStyle.fancy_double);
+        helper.print(tableBuilder.build().render(80));
+    }
 
 
     @ShellMethod("Create new user with supplied user name")

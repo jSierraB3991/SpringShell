@@ -20,7 +20,7 @@ OS name: "linux", version: "5.19.6-artix1-1", arch: "amd64", family: "unix"
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ basic-shell ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 12 source files to /home/juan-sierra/Source/SpringShell/basic-shell/target/classes
+[INFO] Compiling 13 source files to /home/juan-sierra/Source/SpringShell/basic-shell/target/classes
 [INFO] 
 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ basic-shell ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
@@ -46,6 +46,6 @@ OS name: "linux", version: "5.19.6-artix1-1", arch: "amd64", family: "unix"
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.859 s
-[INFO] Finished at: 2022-09-10T01:02:22-05:00
+[INFO] Total time:  5.900 s
+[INFO] Finished at: 2022-09-10T01:46:38-05:00
 [INFO] ------------------------------------------------------------------------
